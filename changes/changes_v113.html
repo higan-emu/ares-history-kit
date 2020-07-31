@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>changes/v113</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0em;
+  outline: none;
+  padding: 0em;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #222;
+  color: #eee;
+  font-family: "Verdana", sans-serif;
+  font-size: 9pt;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header {
+  background: url("/images/prism.png");
+  border-bottom: 1px solid #000;
+  padding: 8px 8px 4px 8px;
+}
+
+header a:not(:first-child) {
+  float: right;
+  margin-left: 0.5em;
+  margin-top: 7px;
+}
+
+nav {
+  background: #444;
+  border-bottom: 1px solid #000;
+}
+
+nav a {
+  color: #eee;
+  display: inline-block;
+  font-size: 0.95em;
+  padding: 0.4em 0.8em;
+}
+
+nav a:hover {
+  background: #666;
+}
+
+main {
+  padding: 0.8em;
+}
+
+main a {
+  color: #77e;
+}
+
+main a:hover {
+  color: #bbe;
+}
+
+main h2 {
+  border-bottom: 1px solid #555;
+  margin-bottom: 0.2em;
+}
+
+main h2 span {
+  font-family: "Georgia";
+  font-size: 11pt;
+  float: right;
+  margin-top: 0.5em;
+}
+
+main img {
+  height: auto;
+  margin-bottom: 0.5em;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+main ol {
+  font-size: 9.5pt;
+  margin-top: -0.3em;
+}
+
+main ol li {
+  display: inline;
+}
+
+main ol li:after {
+  content: " » ";
+  font-weight: bold;
+}
+
+main ol li:last-child:after {
+  content: "";
+}
+
+main p {
+  margin-bottom: 0.5em;
+  max-width: 80em;
+}
+
+main ul {
+  list-style: none;
+  margin-bottom: 0.8em;
+}
+
+main ul > ul {
+  margin-left: 1em;
+  margin-bottom: 0em;
+}
+
+main ul li:before {
+  content: "• ";
+}
+
+main table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  margin-bottom: 0.8em;
+}
+
+main table tr:nth-child(even) {
+  background: #222222;
+}
+
+main table tr:nth-child(odd) {
+  background: #2c2c2c;
+}
+
+main table tr th {
+  background: #433;
+  padding: 0.2em 0.5em;
+  text-align: left;
+}
+
+main table tr td {
+  padding: 0.2em 0.5em;
+}
+
+main pre.source-line {
+  background: #111;
+  float: left;
+  padding: 0em 0.25em;
+  text-align: right;
+}
+
+main pre.source-code {
+  background: #333;
+  margin-bottom: 0.8em;
+  overflow: auto;
+  padding-left: 0.5em;
+}
+
+main pre.binary {
+  background: #333;
+  margin-bottom: 0.5em;
+  overflow: auto;
+  padding: 0.2em 0.5em;
+}
+
+footer {
+  padding: 0em 0.8em;
+  margin-top: -1em;
+}
+
+footer p {
+  border-top: 1px solid #555;
+  color: #888;
+  font-size: 8pt;
+  padding: 0.2em 0em 0.5em 0em;
+}
+</style>
+</head>
+<body>
+<header>
+   <a href="https://ares.dev/"><img src="changes_v113_files/logo-small.png" alt="" width="192" height="42"></a>
+</header>
+<nav>
+   <a href="https://ares.dev/releases">releases</a><!--
+--><a href="https://ares.dev/changes">changes</a><!--
+--><a href="https://ares.dev/wips">wips</a><!--
+--><a href="https://ares.dev/source">source</a><!--
+--><a href="https://ares.dev/images">images</a><!--
+--><a href="https://ares.dev/about">about</a>
+</nav>
+<main>
+<ol><li><a href="https://ares.dev/"><span>ares.dev</span></a></li><li><a href="https://ares.dev/changes"><span>changes</span></a></li><li><a href="https://ares.dev/changes/v113"><span>v113</span></a></li></ol>
+<h2 id="2090769200">v113<span>2020-05-24</span></h2>
+<ul>
+<li>N64: improved TLB emulation (Super Mario 64 is now fully playable)</li>
+<li>lucia: implement analog axis support</li>
+</ul>
+<h2 id="514993487">v113.1<span>2020-05-26</span></h2>
+<ul>
+<li>N64: better input mapping for C-buttons</li>
+<li>lucia: improved input mapping code</li>
+<li>ruby: disabled FreeBSD SDL joypad hotplugging hack (causes input issues in games)</li>
+</ul>
+<h2 id="514993488">v113.2<span>2020-05-27</span></h2>
+<ul>
+<li>ruby: added new FreeBSD UHID driver (to support hotplugging and the Xbox 360 D-pad properly)</li>
+<li>N64: started on Nintendo 64DD support</li>
+</ul>
+<h2 id="514993489">v113.3<span>2020-05-28</span></h2>
+<ul>
+<li>N64: redesigned the bus handler</li>
+<li>N64: execute eight CPU instructions per synchronization event</li>
+<li>N64: range test the CPU Compare register</li>
+<li>N64: decode more RDP display list commands</li>
+</ul>
+<h2 id="514993490">v113.4<span>2020-05-30</span></h2>
+<p>Initial required work to attempt implementing a cached interpreter ...</p>
+<ul>
+<li>N64: moved all CPU and RSP instruction decoding out of opcode handlers</li>
+</ul>
+<h2 id="514993491">v113.5<span>2020-06-01</span></h2>
+<ul>
+<li>N64: added FPU support for ordered and unordered comparisons</li>
+<li>N64: reduced red tape in the CPU and RSP instruction decoder switch tables</li>
+</ul>
+</main>
+<footer>
+   <p>© 2020 byuu</p>
+</footer>
+
+
+</body><style id="stylus-4" type="text/css" class="stylus">li.v-MailboxSource--junk,
+li.v-MailboxSource--trash {
+  display: none !important;
+}
+</style></html>

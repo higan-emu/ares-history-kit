@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>changes/v112</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0em;
+  outline: none;
+  padding: 0em;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #222;
+  color: #eee;
+  font-family: "Verdana", sans-serif;
+  font-size: 9pt;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header {
+  background: url("/images/prism.png");
+  border-bottom: 1px solid #000;
+  padding: 8px 8px 4px 8px;
+}
+
+header a:not(:first-child) {
+  float: right;
+  margin-left: 0.5em;
+  margin-top: 7px;
+}
+
+nav {
+  background: #444;
+  border-bottom: 1px solid #000;
+}
+
+nav a {
+  color: #eee;
+  display: inline-block;
+  font-size: 0.95em;
+  padding: 0.4em 0.8em;
+}
+
+nav a:hover {
+  background: #666;
+}
+
+main {
+  padding: 0.8em;
+}
+
+main a {
+  color: #77e;
+}
+
+main a:hover {
+  color: #bbe;
+}
+
+main h2 {
+  border-bottom: 1px solid #555;
+  margin-bottom: 0.2em;
+}
+
+main h2 span {
+  font-family: "Georgia";
+  font-size: 11pt;
+  float: right;
+  margin-top: 0.5em;
+}
+
+main img {
+  height: auto;
+  margin-bottom: 0.5em;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+main ol {
+  font-size: 9.5pt;
+  margin-top: -0.3em;
+}
+
+main ol li {
+  display: inline;
+}
+
+main ol li:after {
+  content: " » ";
+  font-weight: bold;
+}
+
+main ol li:last-child:after {
+  content: "";
+}
+
+main p {
+  margin-bottom: 0.5em;
+  max-width: 80em;
+}
+
+main ul {
+  list-style: none;
+  margin-bottom: 0.8em;
+}
+
+main ul > ul {
+  margin-left: 1em;
+  margin-bottom: 0em;
+}
+
+main ul li:before {
+  content: "• ";
+}
+
+main table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  margin-bottom: 0.8em;
+}
+
+main table tr:nth-child(even) {
+  background: #222222;
+}
+
+main table tr:nth-child(odd) {
+  background: #2c2c2c;
+}
+
+main table tr th {
+  background: #433;
+  padding: 0.2em 0.5em;
+  text-align: left;
+}
+
+main table tr td {
+  padding: 0.2em 0.5em;
+}
+
+main pre.source-line {
+  background: #111;
+  float: left;
+  padding: 0em 0.25em;
+  text-align: right;
+}
+
+main pre.source-code {
+  background: #333;
+  margin-bottom: 0.8em;
+  overflow: auto;
+  padding-left: 0.5em;
+}
+
+main pre.binary {
+  background: #333;
+  margin-bottom: 0.5em;
+  overflow: auto;
+  padding: 0.2em 0.5em;
+}
+
+footer {
+  padding: 0em 0.8em;
+  margin-top: -1em;
+}
+
+footer p {
+  border-top: 1px solid #555;
+  color: #888;
+  font-size: 8pt;
+  padding: 0.2em 0em 0.5em 0em;
+}
+</style>
+</head>
+<body>
+<header>
+   <a href="https://ares.dev/"><img src="changes_v112_files/logo-small.png" alt="" width="192" height="42"></a>
+</header>
+<nav>
+   <a href="https://ares.dev/releases">releases</a><!--
+--><a href="https://ares.dev/changes">changes</a><!--
+--><a href="https://ares.dev/wips">wips</a><!--
+--><a href="https://ares.dev/source">source</a><!--
+--><a href="https://ares.dev/images">images</a><!--
+--><a href="https://ares.dev/about">about</a>
+</nav>
+<main>
+<ol><li><a href="https://ares.dev/"><span>ares.dev</span></a></li><li><a href="https://ares.dev/changes"><span>changes</span></a></li><li><a href="https://ares.dev/changes/v112"><span>v112</span></a></li></ol>
+<h2 id="2090769199">v112<span>2020-04-28</span></h2>
+<ul>
+<li>Nintendo 64: emulation core started</li>
+</ul>
+<h2 id="4109847262">v112.01<span>2020-04-29</span></h2>
+<ul>
+<li>VR4300: implemented special instructions</li>
+</ul>
+<h2 id="4109847263">v112.02<span>2020-04-30</span></h2>
+<ul>
+<li>VR4300: implemented register-immediate instructions</li>
+<li>VR4300: implemented half of the general instructions</li>
+<li>ares: added Port::supported() -&gt; vector&lt;string&gt; API</li>
+<li>nall: improve checks in directory::exists() and directory::create()</li>
+</ul>
+<h2 id="4109847264">v112.03<span>2020-04-30</span></h2>
+<ul>
+<li>VR4300: implemented most of the general instructions</li>
+</ul>
+<h2 id="4109847265">v112.04<span>2020-04-30</span></h2>
+<ul>
+<li>N64: merged the VR4300 core into the CPU class</li>
+<li>mia: added N64 deinterleaving support</li>
+</ul>
+<h2 id="4109847266">v112.05<span>2020-05-01</span></h2>
+<ul>
+<li>N64: implemented bus skeleton</li>
+<li>N64: simulated the PIF boot ROM (partially)</li>
+</ul>
+<h2 id="4109847267">v112.06<span>2020-05-02</span></h2>
+<ul>
+<li>N64: much faster endian decoding</li>
+<li>N64: implemented CPU coprocessor 0 skeleton (excluding MMU)</li>
+<li>N64: implemented CPU coprocessor 1 skeleton (excluding FPU)</li>
+</ul>
+<h2 id="4109847268">v112.07<span>2020-05-03</span></h2>
+<ul>
+<li>N64: redesigned CPU register casting (use a union class instead of #defines)</li>
+<li>N64: completed CPU coprocessor 1 FPU</li>
+</ul>
+<h2 id="4109847269">v112.08<span>2020-05-03</span></h2>
+<ul>
+<li>N64: correct JAL and JALR instructions</li>
+</ul>
+<h2 id="4109847270">v112.09<span>2020-05-04</span></h2>
+<p>Emulation is now far enough along to complete the boot loading code and begin
+executing game code. The "hello world" CPU rendering demo now runs correctly in
+both 15bpp and 24bpp output modes.</p>
+<ul>
+<li>N64: implemented skeleton interfaces (MI, VI, AI, PI, RI, SI)</li>
+<li>N64: implemented PI DMA</li>
+<li>N64: added basic frame buffer rendering (320x240 only)</li>
+</ul>
+<h2 id="4109847294">v112.10<span>2020-05-05</span></h2>
+<ul>
+<li>N64: removed libco completely, using direct cycle counters now instead</li>
+<li>N64: emulated RSP DMA between IRAM/DRAM and RDRAM</li>
+<li>N64: emulated RSP core R4000 instructions</li>
+<li>N64: started working on RSP COP2 vector instructions</li>
+</ul>
+<h2 id="4109847295">v112.11<span>2020-05-06</span></h2>
+<ul>
+<li>N64: core now requires SSE 4.1 support (for vector instructions)</li>
+<li>N64: implemented VABS, VADD, VADDC, VAND, VCL, VCH, VMOV, VNAND, VNOP, VSAR, VSUB, VSUBC instructions</li>
+</ul>
+<h2 id="4109847296">v112.12<span>2020-05-07</span></h2>
+<ul>
+<li>N64: implemented all official RSP vector instructions</li>
+<li>N64: implemented reserved RSP vector instructions VMULQ, VMACQ, VRNDP, VRNDN</li>
+<li>N64: implemented RSP instructions MFC2 and MFC2</li>
+</ul>
+<h2 id="4109847297">v112.13<span>2020-05-08</span></h2>
+<ul>
+<li>N64: RSP vector instruction fixes</li>
+<li>N64: started on initial exception and interrupt support</li>
+</ul>
+<h2 id="4109847298">v112.14<span>2020-05-09</span></h2>
+<ul>
+<li>N64: implemented CPU SCC ERET instruction</li>
+<li>N64: improved interrupt support slightly</li>
+<li>N64: rewrote CPU disassembler to be more sophisticated</li>
+</ul>
+<h2 id="4109847299">v112.15<span>2020-05-10</span></h2>
+<ul>
+<li>N64: implemented SI DMA</li>
+<li>N64: implemented basic AI audio emulation</li>
+<li>N64: various improvements and bugfixes</li>
+</ul>
+<h2 id="4109847300">v112.16<span>2020-05-11</span></h2>
+<ul>
+<li>N64: skip delay slot when executing ERET instruction</li>
+<li>N64: improve IRQ handling (always update CPU SCC Cause bits when toggling MI IRQs)</li>
+<li>N64: audio emulation improvements</li>
+</ul>
+<h2 id="4109847301">v112.17<span>2020-05-11</span></h2>
+<p>This WIP boots the first official Nintendo 64 title, Namco Museum. It remains to
+be playable, however.</p>
+<ul>
+<li>N64: improved interrupt handling</li>
+<li>N64: implemented basic state machine handling for PI serial data transfers</li>
+<li>N64: resume previously executed instruction after ERET for non-interrupt exceptions</li>
+<li>N64: various other improvements</li>
+</ul>
+<h2 id="4109847302">v112.18<span>2020-05-12</span></h2>
+<ul>
+<li>N64: improved audio playback (AI_LENGTH &amp;=~ 7, not (AI_LENGTH | 7) + 1)</li>
+<li>N64: improved exception handling (ERL bit isn't set on standard exceptions)</li>
+<li>N64: added very incomplete, inital TLB emulation</li>
+<li>N64: various improvements to the disasssembler (including FPU instruction support)</li>
+<li>N64: improved SI emulation (Namco Museum input now works)</li>
+</ul>
+<h2 id="4109847303">v112.19<span>2020-05-13</span></h2>
+<ul>
+<li>N64: improved TLB emulation and made it much faster (but limited to 32-bit mode without ASIDs)</li>
+</ul>
+<h2 id="4109847327">v112.20<span>2020-05-13</span></h2>
+<ul>
+<li>N64: improved AI FIFO emulation</li>
+<li>N64: emulated VT[e] addressing in RSP vector unit</li>
+</ul>
+<h2 id="4109847328">v112.21<span>2020-05-15</span></h2>
+<ul>
+<li>N64: emulated FPU FR=0 mode; fixes intro sound in Namco Museum</li>
+</ul>
+<h2 id="4109847329">v112.22<span>2020-05-15</span></h2>
+<ul>
+<li>N64: added RDRAM and interrupt sources to debugger</li>
+<li>N64: emulated basic RDP commands to detect sync commands for DP IRQ generation</li>
+</ul>
+<h2 id="4109847330">v112.23<span>2020-05-16</span></h2>
+<p>This WIP separates the RSP SCC registers so that RDP rendering commands are not
+processed inside of the RSP. The register interface is shared between the SCC
+and the CPU bus, so there is no technically correct location for these handlers.</p>
+<ul>
+<li>N64: moved RSP SCC registers to outer RSP and RDP I/O handlers</li>
+</ul>
+<h2 id="4109847331">v112.24<span>2020-05-17</span></h2>
+<ul>
+<li>N64: added PIF boot ROM emulation</li>
+<li>N64: detected NUS-CIC revision based on ROM bootcode checksum</li>
+<li>N64: added skeleton I/O reading and writing for all VI and PI registers</li>
+</ul>
+<h2 id="4109847332">v112.25<span>2020-05-17</span></h2>
+<ul>
+<li>N64: added skeleton I/O reading and writing for DPS registers</li>
+<li>N64: added skeleton RDP renderer</li>
+</ul>
+<h2 id="4109847333">v112.26<span>2020-05-18</span></h2>
+<ul>
+<li>N64: CPU and RSP instruction improvements</li>
+<li>N64: improved CPU and RSP branch handling</li>
+</ul>
+<h2 id="4109847334">v112.27<span>2020-05-19</span></h2>
+<ul>
+<li>N64: improved CPU disassembler</li>
+<li>N64: added RSP disassembler</li>
+<li>N64: corrected reads from SP_SEMAPHORE</li>
+<li>N64: improved PIF joypad polling functionality</li>
+<li>N64: added I/O logging to trace logger</li>
+</ul>
+<h2 id="4109847335">v112.28<span>2020-05-20</span></h2>
+<ul>
+<li>N64: implemented missing RSP vector load/store instructions</li>
+<li>N64: fixed RSP MFC2 and MTC2 instructions</li>
+<li>N64: rewrote and simplified CPU TLB handling</li>
+</ul>
+<h2 id="4109847336">v112.29<span>2020-05-20</span></h2>
+<ul>
+<li>N64: added missing BLTZAL, BGEZAL instructions</li>
+<li>N64: added missing SLT, SLTI instructions (they were erroneously aliased to SLTU, SLTIU)</li>
+<li>N64: mask low two bits of PC when writing to SP_PC_REG</li>
+<li>N64: refactored RSP DMA; only mask the low two bits SP_PBUS_ADDRESS</li>
+<li>N64: RSP DMA seemingly updates SP_PBUS_ADDRESS and SP_DRAM_ADDRESS</li>
+</ul>
+<h2 id="4109847360">v112.30<span>2020-05-21</span></h2>
+<p>Many N64 games are now playable.</p>
+<ul>
+<li>N64: VSUB should clear VCO</li>
+<li>N64: corrected VRCP(L) and VRSQ(L) instructions</li>
+<li>N64: many other smaller various fixes</li>
+</ul>
+</main>
+<footer>
+   <p>© 2020 byuu</p>
+</footer>
+
+
+</body><style id="stylus-4" type="text/css" class="stylus">li.v-MailboxSource--junk,
+li.v-MailboxSource--trash {
+  display: none !important;
+}
+</style></html>

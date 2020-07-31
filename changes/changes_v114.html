@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>changes/v114</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0em;
+  outline: none;
+  padding: 0em;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #222;
+  color: #eee;
+  font-family: "Verdana", sans-serif;
+  font-size: 9pt;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header {
+  background: url("/images/prism.png");
+  border-bottom: 1px solid #000;
+  padding: 8px 8px 4px 8px;
+}
+
+header a:not(:first-child) {
+  float: right;
+  margin-left: 0.5em;
+  margin-top: 7px;
+}
+
+nav {
+  background: #444;
+  border-bottom: 1px solid #000;
+}
+
+nav a {
+  color: #eee;
+  display: inline-block;
+  font-size: 0.95em;
+  padding: 0.4em 0.8em;
+}
+
+nav a:hover {
+  background: #666;
+}
+
+main {
+  padding: 0.8em;
+}
+
+main a {
+  color: #77e;
+}
+
+main a:hover {
+  color: #bbe;
+}
+
+main h2 {
+  border-bottom: 1px solid #555;
+  margin-bottom: 0.2em;
+}
+
+main h2 span {
+  font-family: "Georgia";
+  font-size: 11pt;
+  float: right;
+  margin-top: 0.5em;
+}
+
+main img {
+  height: auto;
+  margin-bottom: 0.5em;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+main ol {
+  font-size: 9.5pt;
+  margin-top: -0.3em;
+}
+
+main ol li {
+  display: inline;
+}
+
+main ol li:after {
+  content: " » ";
+  font-weight: bold;
+}
+
+main ol li:last-child:after {
+  content: "";
+}
+
+main p {
+  margin-bottom: 0.5em;
+  max-width: 80em;
+}
+
+main ul {
+  list-style: none;
+  margin-bottom: 0.8em;
+}
+
+main ul > ul {
+  margin-left: 1em;
+  margin-bottom: 0em;
+}
+
+main ul li:before {
+  content: "• ";
+}
+
+main table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  margin-bottom: 0.8em;
+}
+
+main table tr:nth-child(even) {
+  background: #222222;
+}
+
+main table tr:nth-child(odd) {
+  background: #2c2c2c;
+}
+
+main table tr th {
+  background: #433;
+  padding: 0.2em 0.5em;
+  text-align: left;
+}
+
+main table tr td {
+  padding: 0.2em 0.5em;
+}
+
+main pre.source-line {
+  background: #111;
+  float: left;
+  padding: 0em 0.25em;
+  text-align: right;
+}
+
+main pre.source-code {
+  background: #333;
+  margin-bottom: 0.8em;
+  overflow: auto;
+  padding-left: 0.5em;
+}
+
+main pre.binary {
+  background: #333;
+  margin-bottom: 0.5em;
+  overflow: auto;
+  padding: 0.2em 0.5em;
+}
+
+footer {
+  padding: 0em 0.8em;
+  margin-top: -1em;
+}
+
+footer p {
+  border-top: 1px solid #555;
+  color: #888;
+  font-size: 8pt;
+  padding: 0.2em 0em 0.5em 0em;
+}
+</style>
+</head>
+<body>
+<header>
+   <a href="https://ares.dev/"><img src="changes_v114_files/logo-small.png" alt="" width="192" height="42"></a>
+</header>
+<nav>
+   <a href="https://ares.dev/releases">releases</a><!--
+--><a href="https://ares.dev/changes">changes</a><!--
+--><a href="https://ares.dev/wips">wips</a><!--
+--><a href="https://ares.dev/source">source</a><!--
+--><a href="https://ares.dev/images">images</a><!--
+--><a href="https://ares.dev/about">about</a>
+</nav>
+<main>
+<ol><li><a href="https://ares.dev/"><span>ares.dev</span></a></li><li><a href="https://ares.dev/changes"><span>changes</span></a></li><li><a href="https://ares.dev/changes/v114"><span>v114</span></a></li></ol>
+<h2 id="2090769201">v114<span>2020-06-07</span></h2>
+<p>First public release of ares. Bumped the version number early for the milestone.</p>
+<ul>
+<li>SFC: added missing SA1 board definition (for boards without BWRAM)</li>
+</ul>
+<h2 id="514994576">v114.1<span>2020-06-11</span></h2>
+<ul>
+<li>Nintendo 64: started work on CPU dynamic recompiler</li>
+</ul>
+<h2 id="514994577">v114.2<span>2020-06-12</span></h2>
+<p>The new recompilers increase the framerate in Namco Museum from 60fps to 160fps,<br>
+and in Zelda: Ocarina of Time from 55fps to 135fps (presuming no RDP renderer.)</p>
+<ul>
+<li>Nintendo 64: completed basic CPU dynamic recompiler</li>
+<li>Nintendo 64: completed basic RSP dynamic recompiler</li>
+</ul>
+<h2 id="514994578">v114.3<span>2020-06-13</span></h2>
+<ul>
+<li>nall: added bump_allocator class</li>
+<li>Nintendo 64: restructured dynamic recompilers to be cleaner</li>
+</ul>
+<h2 id="514994579">v114.4<span>2020-06-16</span></h2>
+<p>This WIP adds non-SIMD implementations of all RSP vector unit functionality.<br>
+This allows compiling without SSE, but was mainly added for debugging SSE issues.<br>
+It's also useful for documenting in code what the SSE instructions are doing in C++ code.</p>
+<ul>
+<li>Nintendo 64: added non-SSE implementation of RSP vector unit</li>
+</ul>
+<h2 id="514994580">v114.5<span>2020-06-19</span></h2>
+<p>I've started on a Sony PlayStation emulation core with this WIP.<br>
+The goal is to work on the MIPS CPU core while I am still well-versed with the MIPS ISA.<br>
+The Nintendo 64 core will remain my primary focus, however.</p>
+<ul>
+<li>PlayStation: implemented initial driver skeleton (no emulation code yet)</li>
+<li>lucia: added option to group the load menu options into submenus by manufacturer</li>
+<li>lucia: connected Cocoa-specific application menu options to their appropriate callbacks</li>
+<li>hiro/Cocoa: fixed compilation issues for HexEdit (the widget is not implemented, however)</li>
+<li>hiro/Cocoa: fixed a subpixel precision rendering issue causing blurry fonts [LIJI]</li>
+</ul>
+<h2 id="514994581">v114.6<span>2020-06-19</span></h2>
+<ul>
+<li>PlayStation: implemented all core CPU instructions (no SCC or GTE instructions yet)</li>
+</ul>
+<h2 id="514994582">v114.7<span>2020-06-23</span></h2>
+<ul>
+<li>PlayStation: started implementing the CPU SCC (missing some registers still)</li>
+<li>PlayStation: implemented basic DMA support</li>
+</ul>
+<h2 id="514994583">v114.8<span>2020-06-24</span></h2>
+<ul>
+<li>PlayStation: fixed a bug in the SLLV instruction</li>
+<li>PlayStation: implemented interrupts</li>
+</ul>
+<h2 id="514994584">v114.9<span>2020-06-26</span></h2>
+<ul>
+<li>PlayStation: improved DMA support somewhat</li>
+<li>PlayStation: implemented some GP0 and GP1 commands</li>
+</ul>
+<h2 id="4109919168">v114.10<span>2020-06-27</span></h2>
+<ul>
+<li>PlayStation: started on GPU renderer (solid triangles only so far)</li>
+</ul>
+<h2 id="4109919169">v114.11<span>2020-06-28</span></h2>
+<ul>
+<li>PlayStation: added gouraud shaded and textured triangle rendering</li>
+</ul>
+<h2 id="4109919170">v114.12<span>2020-06-29</span></h2>
+<ul>
+<li>PlayStation: added dithering, shaded texture, and partial semi-transparency rendering support</li>
+</ul>
+<h2 id="4109919171">v114.13<span>2020-07-01</span></h2>
+<ul>
+<li>PlayStation: added I/O handling for the SPU (no emulation yet)</li>
+<li>PlayStation: added gaussian interpolation table generation</li>
+<li>Super Famicom: replaced hard-coded constants with gaussian interpolation table generation</li>
+</ul>
+<h2 id="4109919172">v114.14<span>2020-07-02</span></h2>
+<ul>
+<li>Super Famicom: fixed bugs in hires + interlaced mosaic rendering</li>
+<li>PlayStation: started implementing the SPU (no DMA, CD-DA, reverb, or sweep support yet)</li>
+</ul>
+<h2 id="4109919173">v114.15<span>2020-07-03</span></h2>
+<ul>
+<li>PlayStation: added reverb support</li>
+</ul>
+<h2 id="4109919174">v114.16<span>2020-07-05</span></h2>
+<ul>
+<li>Super Famicom: mosaic fix wasn't exactly right before; now it should be</li>
+<li>PlayStation: started implementing CD interface</li>
+<li>PlayStation: started implementing GTE coprocessor</li>
+</ul>
+<h2 id="4109919175">v114.17</h2>
+<ul>
+<li>PlayStation: started implementing timers</li>
+<li>MSX: added more cartridge mappers (Konami SCC, ASCII 8kbit, ASCII 16kbit, etc)</li>
+</ul>
+<h2 id="4109919176">v114.18</h2>
+<ul>
+<li>PlayStation: implemented free-running timer mode</li>
+<li>PlayStation: implemented draw rectangle commands</li>
+</ul>
+<h2 id="4109919177">v114.19</h2>
+<ul>
+<li>PlayStation: started implementing controller support</li>
+<li>PlayStation: improved texture semi-transparency support</li>
+<li>PlayStation: fixed a bug in render clipping</li>
+</ul>
+<h2 id="4109919201">v114.20</h2>
+<ul>
+<li>PlayStation: implemented CD-DA support</li>
+<li>PlayStation: implemented CD data seeking and reading support</li>
+<li>PlayStation: implemented CD-ROM DMA support</li>
+</ul>
+<h2 id="4109919202">v114.21</h2>
+<ul>
+<li>PlayStation: improved GTE support</li>
+<li>PlayStation: improved CD-ROM support</li>
+</ul>
+<h2 id="4109919203">v114.22</h2>
+<ul>
+<li>PlayStation: fixed masking bug in LWL and LWR instructions</li>
+<li>PlayStation: improved timer support</li>
+<li>PlayStation: added EXE side-loading support</li>
+<li>PlayStation: added fast boot support</li>
+<li>PlayStation: added libc putchar logging support</li>
+</ul>
+<h2 id="4109919204">v114.23</h2>
+<ul>
+<li>PlayStation: improved timer support</li>
+<li>PlayStation: added more GPU GP0 rendering commands</li>
+<li>lucia: split the emulator list and emulator options into separate settings panels</li>
+<li>lucia: added fast boot option for PlayStation and Neo Geo Pocket cores</li>
+</ul>
+<h2 id="4109919205">v114.24</h2>
+<p>Ridge Racer now boots and gets in-game, but likely GTE errors prevent it from
+being very playable yet.</p>
+<ul>
+<li>PlayStation: added DMA IRQ support</li>
+<li>PlayStation: added more GTE instructions</li>
+<li>ares: started on a new Debug class for notifications (unimplemented features, etc.)</li>
+</ul>
+<h2 id="4109919206">v114.25</h2>
+<ul>
+<li>PlayStation: implemented all GTE instructions (though certainly with many serious bugs remaining)</li>
+<li>ares: improved Debug class notifications</li>
+</ul>
+</main>
+<footer>
+   <p>© 2020 byuu</p>
+</footer>
+
+
+</body><style id="stylus-4" type="text/css" class="stylus">li.v-MailboxSource--junk,
+li.v-MailboxSource--trash {
+  display: none !important;
+}
+</style></html>

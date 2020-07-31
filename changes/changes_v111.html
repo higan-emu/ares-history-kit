@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>changes/v111</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0em;
+  outline: none;
+  padding: 0em;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #222;
+  color: #eee;
+  font-family: "Verdana", sans-serif;
+  font-size: 9pt;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header {
+  background: url("/images/prism.png");
+  border-bottom: 1px solid #000;
+  padding: 8px 8px 4px 8px;
+}
+
+header a:not(:first-child) {
+  float: right;
+  margin-left: 0.5em;
+  margin-top: 7px;
+}
+
+nav {
+  background: #444;
+  border-bottom: 1px solid #000;
+}
+
+nav a {
+  color: #eee;
+  display: inline-block;
+  font-size: 0.95em;
+  padding: 0.4em 0.8em;
+}
+
+nav a:hover {
+  background: #666;
+}
+
+main {
+  padding: 0.8em;
+}
+
+main a {
+  color: #77e;
+}
+
+main a:hover {
+  color: #bbe;
+}
+
+main h2 {
+  border-bottom: 1px solid #555;
+  margin-bottom: 0.2em;
+}
+
+main h2 span {
+  font-family: "Georgia";
+  font-size: 11pt;
+  float: right;
+  margin-top: 0.5em;
+}
+
+main img {
+  height: auto;
+  margin-bottom: 0.5em;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+main ol {
+  font-size: 9.5pt;
+  margin-top: -0.3em;
+}
+
+main ol li {
+  display: inline;
+}
+
+main ol li:after {
+  content: " » ";
+  font-weight: bold;
+}
+
+main ol li:last-child:after {
+  content: "";
+}
+
+main p {
+  margin-bottom: 0.5em;
+  max-width: 80em;
+}
+
+main ul {
+  list-style: none;
+  margin-bottom: 0.8em;
+}
+
+main ul > ul {
+  margin-left: 1em;
+  margin-bottom: 0em;
+}
+
+main ul li:before {
+  content: "• ";
+}
+
+main table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  margin-bottom: 0.8em;
+}
+
+main table tr:nth-child(even) {
+  background: #222222;
+}
+
+main table tr:nth-child(odd) {
+  background: #2c2c2c;
+}
+
+main table tr th {
+  background: #433;
+  padding: 0.2em 0.5em;
+  text-align: left;
+}
+
+main table tr td {
+  padding: 0.2em 0.5em;
+}
+
+main pre.source-line {
+  background: #111;
+  float: left;
+  padding: 0em 0.25em;
+  text-align: right;
+}
+
+main pre.source-code {
+  background: #333;
+  margin-bottom: 0.8em;
+  overflow: auto;
+  padding-left: 0.5em;
+}
+
+main pre.binary {
+  background: #333;
+  margin-bottom: 0.5em;
+  overflow: auto;
+  padding: 0.2em 0.5em;
+}
+
+footer {
+  padding: 0em 0.8em;
+  margin-top: -1em;
+}
+
+footer p {
+  border-top: 1px solid #555;
+  color: #888;
+  font-size: 8pt;
+  padding: 0.2em 0em 0.5em 0em;
+}
+</style>
+</head>
+<body>
+<header>
+   <a href="https://ares.dev/"><img src="changes_v111_files/logo-small.png" alt="" width="192" height="42"></a>
+</header>
+<nav>
+   <a href="https://ares.dev/releases">releases</a><!--
+--><a href="https://ares.dev/changes">changes</a><!--
+--><a href="https://ares.dev/wips">wips</a><!--
+--><a href="https://ares.dev/source">source</a><!--
+--><a href="https://ares.dev/images">images</a><!--
+--><a href="https://ares.dev/about">about</a>
+</nav>
+<main>
+<ol><li><a href="https://ares.dev/"><span>ares.dev</span></a></li><li><a href="https://ares.dev/changes"><span>changes</span></a></li><li><a href="https://ares.dev/changes/v111"><span>v111</span></a></li></ol>
+<h2 id="2090769198">v111<span>2020-03-25</span></h2>
+<p>Initial release; fork of <strong>higan</strong> v110.</p>
+<ul>
+<li>the project and core library is now called <strong>ares</strong></li>
+<li>the simplified user interface is now called <strong>lucia</strong></li>
+<li>the advanced user interface is now called <strong>luna</strong></li>
+<li>the game analyzer is now called <strong>mia</strong></li>
+<li>removed the database editor <strong>genius</strong> from the project</li>
+<li>PC Engine: adjusted rendering viewport for the scanline renderer from Y=18 to Y=21</li>
+</ul>
+<h2 id="514991309">v111.1<span>2020-03-27</span></h2>
+<ul>
+<li>restructured project layout by moving targets (luna and lucia) out of ares</li>
+<li>added ares logo to lucia, luna, and mia's about dialog</li>
+<li>lucia: added screenshot capture tool (captures the <em>next</em> frame rendered)</li>
+</ul>
+<h2 id="514991310">v111.2<span>2020-03-28</span></h2>
+<ul>
+<li>all: Makefile improvements (obj and out paths are no longer hard-coded)</li>
+<li>all: renamed Screen::Region&lt;String&gt; to Screen::Overscan&lt;Boolean&gt;</li>
+<li>lucia: implemented bsnes' multiple-mappings per input system</li>
+<li>lucia: implemented memory editor and export tool</li>
+<li>Super Famicom: added memory editing support</li>
+<li>PC Engine: added overscan setting to the dot-based renderer (256 -&gt; 272 width)</li>
+</ul>
+<h2 id="514991311">v111.3<span>2020-03-29</span></h2>
+<ul>
+<li>ruby: added joypad hotplugging support to the SDL 2.0 driver</li>
+<li>ruby: added workaround for FreeBSD's SDL 2.0 port not supporting SDL_JOYDEVICE(ADDED|REMOVED)</li>
+<li>lucia: support new ruby::Input::onHotplug() callback to automatically refresh input mappings</li>
+<li>Mega Drive + Mega CD: added memory editing support</li>
+<li>lucia: implemented graphics viewer and export tool</li>
+<li>Super Famicom: added graphics viewing support to the accurate renderer</li>
+</ul>
+<h2 id="514991312">v111.4<span>2020-03-30</span></h2>
+<ul>
+<li>ares: restructured debugging nodes into ares/node/debug</li>
+<li>PC Engine: added memory editing support</li>
+<li>WonderSwan: added interrupt tracing support</li>
+</ul>
+<h2 id="514991313">v111.5<span>2020-04-01</span></h2>
+<ul>
+<li>ColecoVision: added memory editing support (CPU only; no VDP support yet)</li>
+<li>Famicom: added memory editing support</li>
+<li>Game Boy + Game Boy Color: added memory editing support</li>
+<li>Game Boy Advance: added memory editing support</li>
+<li>Master System + Game Gear: added memory editing support</li>
+<li>MSX: added memory editing support (CPU only; no VDP support yet)</li>
+<li>SG-1000 + SC-3000: added memory editing support (CPU only; no VDP support yet)</li>
+<li>SG-1000 + SC-3000: $c000-ffff maps to system RAM, not cartridge RAM</li>
+<li>Neo Geo Pocket + Neo Geo Pocket Color: added memory editing support</li>
+<li>WonderSwan + WonderSwan Color: added memory editing support</li>
+</ul>
+<h2 id="514991314">v111.6<span>2020-04-04</span></h2>
+<ul>
+<li>ares: added new Node::Properties debugger type</li>
+<li>lucia: added new properties viewer tool</li>
+<li>all: removed extraneous inline designators from member functions declared inside header files</li>
+</ul>
+<h2 id="514991315">v111.7<span>2020-04-05</span></h2>
+<ul>
+<li>ruby: removed Input::onHotplug(); luna and lucia handle hot-plugging automatically</li>
+<li>Famicom: refactored SxROM and MMC1 into a single class</li>
+<li>Famicom: converted generic class variable types (bool, uint) to uint# types</li>
+<li>Game Boy Advance: fixed a bug with keypad interrupt handling (keypad array was erroneously marked static)</li>
+<li>all: moved inline designators from function designators to function declarations</li>
+</ul>
+<h2 id="514991316">v111.8<span>2020-04-07</span></h2>
+<ul>
+<li>Famicom: refactored every cartridge board (merging all chip classes into board classes)</li>
+<li>Famicom: modernized every cartridge board (code cleanups and improvements)</li>
+<li>Famicom: emulated MMC5 audio channels and MMC5A timer IRQs</li>
+<li>Famicom: merged fc/memory class into fc/cpu</li>
+<li>hiro/Qt: fix issue with removing window modality [baraclese]</li>
+</ul>
+<h2 id="514991317">v111.9<span>2020-04-08</span></h2>
+<ul>
+<li>Famicom: renamed NES-* boards to HVC-*</li>
+<li>Famicom, Super Famicom, Mega Drive, PC Engine: restructured cartridge slot and expansion port handling</li>
+<li>hiro/Qt: fix crash on exit by destructing all UI objects first [baraclese]</li>
+</ul>
+<h2 id="4109811357">v111.10<span>2020-04-09</span></h2>
+<p>This WIP marks the start of an effort to simplify the process of initializing
+system trees in ares. Before, all load functions had to take both a parent
+Object, and a shadow source Object. During the construction of every Object, the
+attributes and values of the shadow Object would be copied in.</p>
+<p>The goal here is to instead construct system trees only from parent Objects, and
+then once the system tree has been constructed, copy a serialized tree into the
+actual system tree. What makes this difficult is that the serialized tree will
+have peripherals connected to ports, resulting in a much larger tree. So the
+copy function has to specialize on ports to create and attach said peripherals
+to the actual system tree, and then continue unserializing the shadow tree to
+the actual system tree.</p>
+<p>In any case, so far this new approach is working, thankfully. This reduces a
+substantial amount of boilerplate that was previously needed inside every single
+emulation cores in ares. But it will take many WIPs to slowly convert all twelve
+emulation cores to the new design. I made this change in a way that the other
+cores will continue to function as expected, so both designs are currently fully
+functional. Once every core has been ported, I will start removing the
+boilerplate functionality that was needed for the old design.</p>
+<ul>
+<li>ares: created Object::copy(Node::Object)</li>
+<li>Famicom: started simplifying tree construction</li>
+</ul>
+<h2 id="4109811358">v111.11<span>2020-04-10</span></h2>
+<p>The base tree initialization rewrite is completed, however there remains work to
+be done with attaching peripherals not unserializing properly. But it's a solid
+start.</p>
+<ul>
+<li>ares: ported all cores to the new simplified tree construction</li>
+</ul>
+<h2 id="4109811359">v111.12<span>2020-04-11</span></h2>
+<p>Peripheral unserialization has been completed. Things are looking up!</p>
+<ul>
+<li>ares: simplified peripheral serialization for all cores</li>
+</ul>
+<h2 id="4109811360">v111.13<span>2020-04-15</span></h2>
+<p>This release implements enough of the PC Engine CD to boot its first software
+title, Chris Covell's Screen Dimension Test. There's a large amount of work that
+remains before commercial titles will be playable, however.</p>
+<ul>
+<li>PC Engine CD: started implementing SCSI commands</li>
+<li>nall/decode/cue: new decoder for parsing CD-ROM CUE sheets</li>
+<li>nall/vfs/cdrom: support ISO images</li>
+</ul>
+<h2 id="4109811361">v111.14<span>2020-04-17</span></h2>
+<ul>
+<li>nall/vfs/cdrom: build image in-memory (required to support the below features more easily)</li>
+<li>nall/vfs/cdrom: support multiple files per CUE sheet</li>
+<li>nall/vfs/cdrom: support WAV audio files</li>
+</ul>
+<h2 id="4109811362">v111.15<span>2020-04-18</span></h2>
+<p>The first officially licensed PC Engine CD games are now playable: Bomberman '94
+Taikenban and Deden no Den.</p>
+<ul>
+<li>ares: emulated the OKI MSM5025 ADPCM chip</li>
+<li>PC Engine CD: added ADPCM playback support (incomplete)</li>
+<li>PC Engine CD: various emulation improvements</li>
+</ul>
+<h2 id="4109811363">v111.16<span>2020-04-21</span></h2>
+<ul>
+<li>PC Engine CD: working ADPCM playback support</li>
+<li>PC Engine CD: added CD-DA playback support</li>
+<li>PC Engine CD: various restructuring and code cleanups</li>
+</ul>
+<h2 id="4109811364">v111.17<span>2020-04-22</span></h2>
+<p>This WIP has started on a stream manager, which for now only allows you to mute
+individual streams, but in the future it could be nice to expand this tool to
+selectively configure bandpass filters and more.</p>
+<ul>
+<li>ares: added Node::Stream::setMuted(bool) function</li>
+<li>lucia: added audio stream manager to selectively mute individual streams (for debugging purposes)</li>
+<li>lucia: include system name in recent games entries, to disambiguate Mega CD and PC Engine CD games</li>
+</ul>
+<h2 id="4109811365">v111.18<span>2020-04-23</span></h2>
+<ul>
+<li>mia: use nall/vfs/cdrom to convert images on import (more complete; shares code)</li>
+<li>mia: added identify(filename) function to detect what system a given game image is for</li>
+<li>mia: added medium(name) to locate a Media object to use</li>
+<li>lucia: replaced Emulator::extensions with Emulator::medium</li>
+</ul>
+<h2 id="4109811366">v111.19<span>2020-04-24</span></h2>
+<ul>
+<li>PC Engine CD: corrected ADPCM $180d flags (fixes many ADPCM playback issues)</li>
+<li>PC Engine CD: use live playing flag for $180d.d5 (fixes Popful Mail hanging bug)</li>
+<li>PC Engine CD: supported SCSI command 0xd9 CDDA playback mode (loop, notify, stop)</li>
+</ul>
+<h2 id="4109811390">v111.20<span>2020-04-24</span></h2>
+<ul>
+<li>nall: added nall/encode/png.hpp (uses optipng or pngcrush for optional compression)</li>
+<li>luna: capture screenshots in PNG format instead of in BMP format</li>
+<li>lucia: capture screenshots in PNG format instead of in BMP format</li>
+<li>PC Engine CD: emulated drive seek delays</li>
+<li>PC Engine CD: emulated CD-DA and ADPCM audio volume fader</li>
+</ul>
+<h2 id="4109811391">v111.21<span>2020-04-25</span></h2>
+<ul>
+<li>PC Engine: added support for Populous save RAM</li>
+<li>PC Engine: attached debugging Node::Memory objects to HuCards with RAM</li>
+<li>PC Engine: split System Card and Super System Card emulation into separate classes</li>
+<li>PC Engine: added Arcade Card Duo and Arcade Card Pro emulation (though it isn't working yet)</li>
+<li>PC Engine Duo: added emulation support (as a separate interface; requires SSC 3.0 BIOS)</li>
+<li>lucia: display warning message when loading games if the save directory is unwritable</li>
+<li>lucia: display error status message when capturing a screenshot to an unwritable directory</li>
+</ul>
+<h2 id="4109811392">v111.22<span>2020-04-28</span></h2>
+<ul>
+<li>PC Engine CD: fixed Arcade Card emulation bug in register I/O address decoding</li>
+<li>PC Engine CD: fixed a bug with ADPCM DMA</li>
+<li>Super Famicom: implemented more of the HG51B disassembler (still very incomplete)</li>
+</ul>
+</main>
+<footer>
+   <p>© 2020 byuu</p>
+</footer>
+
+
+</body><style id="stylus-4" type="text/css" class="stylus">li.v-MailboxSource--junk,
+li.v-MailboxSource--trash {
+  display: none !important;
+}
+</style></html>
