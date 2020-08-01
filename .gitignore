@@ -1,6 +1,6 @@
 .redo
 archive-list.txt
-archive-releases.txt
+releases.txt
 *.metadata
 *.changelog
 !changes/ares_v115.changelog
