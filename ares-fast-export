@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+import datetime
+import io
+import os
+import os.path
+import re
+import shutil
+import sys
+import tarfile
+from typing import NamedTuple
+
+
+FULL_RELEASE_RE = re.compile(r"v\d+$")
+
+
+class Release(NamedTuple):
+    date: datetime.datetime
+    version: str
+    changelog: str
+    archive_path: str
+
+
+def iter_releases():
+    with open("releases.txt", "r") as handle:
+        for line in handle:
+            date, version = line.strip().split("\t")
+
+            date = datetime.datetime.fromisoformat(date)
+            archive_path = f"./archives/{version}.tar.xz"
+            changelog_path = f"./changes/{version}.changelog"
+
+            with open(changelog_path, "rb") as changelog_handle:
+                changelog = changelog_handle.read().strip()
+
+            yield Release(date, version, changelog, archive_path)
+
+
+class ArchiveFile(NamedTuple):
+    path: str
+    size: int
+    handle: io.BufferedReader
+
+
+def iter_files(archive):
+    empty_dirs = set()
+
+    with tarfile.open(archive) as archive:
+        for info in iter(archive.next, None):
+
+            if info.isdir():
+                # This directory may be empty.
+                empty_dirs.add(info.name)
+
+            elif info.isfile():
+                # This file's parent clearly isn't an empty directory.
+                empty_dirs.discard(os.path.dirname(info.name))
+
+                yield ArchiveFile(
+                    path=info.name,
+                    size=info.size,
+                    handle=archive.extractfile(info),
+                )
+
+            # Git doesn't care about non-files.
+
+    for dir in empty_dirs:
+        if dir[-4:] == "/obj" or dir[-4:] == "/out":
+            gitignore=b"*\n!.gitignore\n"
+        else:
+            gitignore=b""
+
+        yield ArchiveFile(
+            path=dir + "/.gitignore",
+            size=len(gitignore),
+            handle=io.BytesIO(gitignore),
+        )
+
+
+def write(bytes):
+    sys.stdout.buffer.write(bytes)
+
+
+def produce_history(releases):
+    for mark, release in enumerate(releases, 1):
+        write(b"progress Committing version %s\n" %
+            release.version.encode("utf-8")
+        )
+        write(b"commit refs/heads/ares\n")
+        write(b"mark :%d\n" % mark)
+        write(b"committer byuu <byuu@byuu.org> %d +0000\n" %
+            release.date.timestamp()
+        )
+
+        write(b"data %d\n" % len(release.changelog))
+        write(release.changelog)
+        write(b"\n")
+
+        # We're going to replace the previous release with a new one.
+        write(b"deleteall\n")
+
+        for each in iter_files(release.archive_path):
+            write(b"M 100644 inline %s\n" % each.path.encode("utf-8"))
+            write(b"data %d\n" % each.size)
+            shutil.copyfileobj(each.handle, sys.stdout.buffer)
+            write(b"\n")
+
+        m = FULL_RELEASE_RE.search(release.version)
+        if m is not None:
+            write(b"reset refs/tags/%s\n" % m.group().encode("utf-8"))
+            write(b"from :%d\n" % mark)
+
+
+def main(args):
+    os.chdir(os.path.dirname(args[0]))
+
+    write(b"reset refs/heads/ares\n")
+    write(b"from refs/tags/v110\n")
+
+    produce_history(iter_releases())
+
+    write(b"done\n")
+
+    return 0
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))
