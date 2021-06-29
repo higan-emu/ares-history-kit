@@ -70,7 +70,8 @@ def render_changelog(markup):
             super().close()
 
         def handle_starttag(self, tag, attrs):
-            self.buffers.append("")
+            if tag != "br":
+                self.buffers.append("")
 
         def handle_endtag(self, tag):
             content = self.buffers.pop()
