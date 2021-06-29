@@ -41,7 +41,7 @@ Nevertheless:
  3. Change directory to the higan repository
  4. Import the ares history:
  
-        path/to/ares-history-kit/ares-fast-export | git-fast-import
+        path/to/ares-history-kit/ares-fast-export | git fast-import
 
  5. The higan repo should now have an "ares" branch,
     based off the v110 tag,
