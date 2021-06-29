@@ -2,4 +2,10 @@
 archive-list.txt
 releases.txt
 *.metadata
-*.changelog
+changes/ares_v111*.changelog
+changes/ares_v112*.changelog
+changes/ares_v113*.changelog
+changes/ares_v114*.changelog
+changes/ares_v115*.changelog
+changes/ares_v116*.changelog
+changes/ares_v117r01.changelog

@@ -1,0 +1,3 @@
+I am getting my ass kicked by SH-2 delay slots >_>
+
+The basic idea of them is simple, but the PR register and when to do the +4 or +2 or not is not intuitive.

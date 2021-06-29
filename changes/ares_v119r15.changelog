@@ -1,0 +1,10 @@
+Nintendo 64: began adapting CPU cached interpreter into a dynamic recompiler
+Nintendo 64: began adapting RSP cached interpreter into a dynamic recompiler
+Nintendo 64: added 64-bit addressing and TLB supporting
+Nintendo 64: added endian support to [LS][WD][LR] instructions
+
+I could really use a hand with my CPU dynarec, n64/cpu/recompiler.cpp line 1335.
+When calling an FPU instruction without SCC coprocessor 1 enabled, it throws an exception.
+If I call the exception function, the emulator crashes hard and I don't understand why at all.
+The stack is aligned, but it seems if I modify rbx/rbp/r13 as I do with the RSP+SH2 just fine, it seems to die. Yet even if I make that code restore rbx/rbp/r13 before calling the coprocessor exception function, it still dies. Really at a loss >_>
+Also, this will only work on Linux/BSD at the moment. The RSP vector functions pass four parameters, and my Windows call wrapper can only handle 3 arguments because after that the argument has to go on the stack. I'll fix that later.

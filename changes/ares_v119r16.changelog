@@ -1,0 +1,5 @@
+Mega Drive: VDP scanline renderer compiles once more
+Nintendo 64: improved dynamic recompiler
+PlayStation: began adapting CPU cached interpreter into a dynamic recompiler
+lucia: allow mapping analog axes separately (allows mapping sticks to the keyboard)
+All that's left now is fixing the call() function in the N64/PS1 to support >3 (4) arguments on Windows and we can release v120

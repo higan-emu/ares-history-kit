@@ -1,0 +1,40 @@
+I'm excited to launch ares v118 today, the first release featuring playable,
+full-speed Nintendo 64 emulation!
+
+The new Nintendo 64 emulation is made possible thanks to [Themaister] very
+graciously porting his Vulkan-based ParaLLEl-RDP graphics renderer to ares. With
+its default settings, it is nearly pixel-perfect to real hardware, and it
+optionally supports upscaling to 2x or 4x the original Nintendo 64 resolution,
+plus optional supersampling back down to the original resolution (for enhanced
+anti-aliasing) if desired. The Vulkan support requires an appropriate graphics
+card, and either Windows or Linux. At this time, Vulkan is not available for
+macOS nor the BSDs.
+
+Also new for the Nintendo 64 core in this release is Rumble Pak, Cartridge Pak,
+SRAM, EEPROM, and Flash save support. Note that for right now, the Rumble Pak
+will only be enabled for games which use internal saves (SRAM, EEPROM, and
+Flash.) That does not cover all Rumble Pak-capable games. The option to choose
+between Rumble Paks and Cartridge Paks will be added to a future release.
+
+For the PlayStation core, [Luke Usher] provided two rendering fixes that allow
+Final Fantasy VII and Tony Hawk's Pro Skater to be fully playable!
+
+Right now, approximately 33% of the Nintendo 64 library is fully playable, and
+about 67% of the PlayStation library is fully playable. Each core has only been
+under active development for about one month each, so they both have a long way
+to go. Please treat these early releases as tech samples, rather than finished
+emulation cores.
+
+Further, note that the Nintendo 64 and PlayStation cores employ cached
+interpreters. This is a middle-ground between the accuracy of interpreters and
+the performance of dynamic recompilers. As such, ares' system requirements will
+be a bit higher than traditional emulators for these systems. Presuming no
+background task interference or CPU throttling, generally speaking, a Ryzen 5
+2600 or better CPU should get you to around ~120fps in the average case, and
+~60fps in the worst case.
+
+The source code has also been released under the terms of the Creative Commons
+BY-NC-ND 4.0 license.
+
+[Themaister]: http://github.com/Themaister/
+[Luke Usher]: https://twitter.com/LukeUsher1

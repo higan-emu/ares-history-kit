@@ -1,0 +1,3 @@
+  - Nintendo 64: report 64DD as missing for now; fixes F-Zero X
+  - Nintendo 64: improved TLB emulation; fixes Conker's Bad Fur Day
+  - Mega Drive: improved VDP FIFO emulation

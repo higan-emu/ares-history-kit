@@ -1,0 +1,11 @@
+This WIP has the new mia system. It's a pretty massive change ... I hope it will
+go okay for you. Feel free to ping me and I'll walk you through it.
+
+Essentially, we want to edit mia/system/neo-geo-(aes|mvs).cpp to load in the
+necessary files from MAME's neogeo.zip that is given to it (I have a helper
+Pak::read(zipfile, pattern) function to grab files out of the archive for you
+into a vector<u8>), do endian conversion, add to the pak, then the Neo Geo core
+can see it.
+
+The Neo Geo cartridge support should be enough for Magician Lord and super early
+games with no mappers or crypto, so we'll start there and work our way up.

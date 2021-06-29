@@ -1,0 +1,11 @@
+A working VDP FIFO implementation (write slots only), but probably wildly
+inaccurate. Rough timing approximations for the slots.
+
+This build fixes some issues in MD Sonic the Hedgehog (forgot to undo the
+background color register bit twiddling when reverting some overly aggressive
+VDP-performance optimizations) and also fixes MD Golden Axe II.
+
+I spent a few hours trying to fix Lemmings 2 from locking up immediately. What
+happens is I get a fourth Hblank IRQ before it clears a RAM value, whereas
+Mednafen only gets three. And that desyncs something and it never gets out of a
+loop.

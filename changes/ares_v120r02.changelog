@@ -1,0 +1,9 @@
+This fixes a major issue with the 68K ADD,CMP,SUB instructions not clipping, and improves the VDP scanline renderer timing somewhat.
+
+This fixes Alien Solder, and I also moved the DMA run below the FIFO/prefetch to fix Comix Zone's graphics. It regresses several Titan Overdrive 2 screens, but oh well.
+I'm trying to track down a bug in Popful Mail (US) where the CPU crashes right after the title screen. It seems like the CPU is getting stuck in a loop that keeps calling the same function, so the stack keeps decrementing until it ends up overwriting the currently executing code with a bad instruction.
+Without an I/O tracer it's really difficult to try and understand what the CPU is stuck waiting on and looping on. I'll have to add an I/O tracer to the Mega CD registers.
+The CPU fixes sadly didn't improve anything in the 32X space. Metal Head gets in a loop until it overwrites the stack frame return address with 0x1fff1fff that causes a return to an unaligned address that crashes the SH2 master.
+After Burner Complete doesn't boot at all. Amazing Spider-Man still has screwed up graphics priority ordering for the 32X VDP.
+Space Harrier still shows a bunch of junk lines at the top and bottom of the screen.
+The scanline VDP can now run Lemmings 1&2, Alien Soldier, etc. But it still does horrifically bad with Titan Overdrive, especially 2.

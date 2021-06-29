@@ -1,0 +1,11 @@
+Nintendo 64: ignore A15 on controller pak reads and writes
+Master System: implemented Codemasters, Korea, MSX, Janggun mappers
+Master System: improved Sega mapper emulation
+Master System: added initial emulation of port $3e
+Master System: added support to load BIOSes
+Master System: initialize stack pointer to 0xfffd when no BIOS loaded [Luke Usher]
+Game Boy Advance: emulated BIOS swap register [MerryMage]
+Mega Drive: cancel pending IRQs when they are disabled [Jonas Quinn]
+Mega Drive: fixed handling of VDP field flag [Jonas Quinn]
+Mega Drive: mask upper bit of VDP sprite Y value when in progressive display mode [Jonas Quinn]
+X24C01, M24Cxx: improve emulation of EEPROM command sequences

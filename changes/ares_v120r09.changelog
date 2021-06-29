@@ -1,0 +1,4 @@
+Mega Drive: improved EEPROM emulation
+Nintendo 64: fixed CPU SCC counter rate [simer]
+Nintendo 64: added initial emulation of the SM5K processor (not connected yet)
+lucia: update frame rate from the main thread to prevent a race condition with GTK

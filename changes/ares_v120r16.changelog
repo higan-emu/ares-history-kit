@@ -1,0 +1,1 @@
+This gets a 100% pass on FPGAzumSpass' WonderSwan instruction timing tests, and emulates CPU prefetch as well, but it seems to make games less stable rather than more =(

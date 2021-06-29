@@ -1,0 +1,9 @@
+Nintendo 64: fixed cartridge flash memory support
+Master System: VDP line coincidence should be initialized to $ff [fixes Shadow Dancer]
+Master System: VDP sprite overflow index defaults to $1f, not $00 [fixes PGA Tour Golf]
+SN76489: corrected port latching behavior and noise volume writes [fixes Micro Machines]
+TMS9918: greatly refactored code
+V9938: greatly refactored code
+Z80: disassembler fixes
+lucia: corrected mapping of Master System pause button [fixes Baku Baku Panic]
+nall: disable -Wstringop-overflow for GCC due to compiler heuristics error

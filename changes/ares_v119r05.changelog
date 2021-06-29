@@ -1,0 +1,7 @@
+2021-04-09
+
+  - ares: added Thread::restart() function to reset a thread without resetting its clock
+  - Mega Drive: improved DRAM refresh timings
+  - Mega Drive: added VDP I/O logger
+  - Mega Drive: fixed VDP counter emulation (still inaccurate)
+  - Mega Drive: improved VDP DMA and FIFO emulation

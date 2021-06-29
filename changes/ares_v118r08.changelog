@@ -1,0 +1,3 @@
+Still too many bugs to run anything. Hopefully next time ...
+
+Chaotix 68K writes to FIFO, then SH2s never read it or query FIFO status.

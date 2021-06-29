@@ -1,0 +1,3 @@
+Famicom: added database entries for Jajamaru Gekimaden and Mazase Top Pro PRG-RAM
+M24Cx: rewrote emulation to be more complete; though still not working for Cxx/Cxxx sizes
+Nintendo 64: try stopping SI polling on recv=0xfe

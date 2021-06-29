@@ -1,0 +1,22 @@
+TLCS900H: refactored instruction decoder and disassembler using range-case
+TLCS900H: improved emulation of (PC+d16) addressing mode (LDAR)
+TMS9918, V9938, SMS VDP: corrected sprite zoom emulation [Jonas Quinn]
+Neo Geo Pocket: added new debugging modules (flash ROM, I/O accesses, system calls)
+Neo Geo Pocket: improved CPU interrupt logger (prints name of interrupt now)
+Neo Geo Pocket: fixed a critical issue with interrupt priority levels; fixes many games
+Neo Geo Pocket: added stubs for all remaining TMP95C061F I/O registers (not emulated yet)
+Neo Geo Pocket: set CPU I/O port $b1.d2 reads to return 1 (fixes SNK Gals' Fighter)
+Neo Geo Pocket: added stubs for undocumented CPU I/O ports $b6 and $b7
+Super Famicom: PPU code restructuring
+Super Famicom: added widescreen (16:9 and 21:9) support to the scanline renderer
+WonderSwan: refactored I/O handlers to use switch/case instead of if tests
+WonderSwan: rewrote PPU renderer to modularize each component (screen1, screen2, sprite, dac, etc)
+WonderSwan: corrected timers to count down instead of up; fixes timing in many games [FPGAzumSpass]
+WonderSwan: improved screen two window emulation [FPGAzumSpass]
+hiro: TableView::onContext() is now TableView::onContext(TableViewCell) (not supported for Cocoa or Qt yet)
+lucia: merged code to handle input assignment overlays and controller polling for each emulation core
+lucia: added virtual mouse emulation and added mouse capture support
+lucia: added support to change devices connected to controller ports
+Neo Geo Pocket: added database workaround for underdumped Prize Game: PP-AA01 Pusher Program (Japan)
+Neo Geo Pocket: fixed fast boot mode for Neo Cherry Pocket
+nall/range: added new within() templates

@@ -1,0 +1,12 @@
+So, spoiler since you'll all see it: Luke and I are gonna be working on a
+Neo*Geo core. Please keep that a secret for now until we can get some
+screenshots to share with people.
+
+Would appreciate feedack on the vfs redesign, still a work in progress. Right
+now, the potential is there to have ares cores that don't use manifests at all.
+So far, only the ColecoVision core actually does it. However, all cores are
+ported to use the new Platform::pak() function instead of Platform::open() [now
+removed.]
+
+Lots of stuff is broken right now: N64/PS1 memory cards, PC Engine CD / Mega CD
+internal save memory, Mega CD can't play any games, FDS and NGP don't save, etc.

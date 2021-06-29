@@ -1,0 +1,3 @@
+GoldenEye 007 and Jet Force Gemini run now. Right now, known N64 bugs are: Donkey Kong 64 hangs when the EEPROM support is enabled, Indiana Jones doesn't boot (probably anti-emulator code?), Blast Corps blinks a lot (though less than it did before.)
+
+This WIP has CPU instruction and data cache emulation, though I had to disable the data cache as it's not working yet.

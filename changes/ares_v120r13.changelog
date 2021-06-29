@@ -1,0 +1,4 @@
+Game Gear: fix inputs
+Master System: don't evaluate sprites past active display area [fixes Rescue Mission]
+Mega Drive: don't acknowledge VDP IRQs until the CPU triggers them [fixes Mega Lo Mania]
+lucia: begin refactoring input mapping to allow per-system mappings and multiple controller types

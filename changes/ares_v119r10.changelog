@@ -1,0 +1,7 @@
+[Previously, Near said "Now to fix sprite fetching on Y=-1"]
+
+Should be substantially better now.
+
+Titan Overdrive 2 shows distorted graphics on the "Overdrive 2" logo screen (after the ship crash and maze run), and the only way to get that working is to double the VDP FIFO speed. It already runs twice as fast in 128K VRAM mode. The same FIFO speed doubling is required to not crash after the Titancade screen.
+
+Unless I'm really fundamentally misunderstanding something, I'm not sure what's going on here.

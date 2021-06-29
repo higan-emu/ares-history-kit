@@ -1,0 +1,4 @@
+Mega Drive: fixed a bug with LINEA and LINEF instructions (should not decrement PC)
+Mega Drive: added EEPROM emulation
+mia: added Mega Drive and Mega 32X EEPROM database entries
+nall: added priority_queue::remove(T) support

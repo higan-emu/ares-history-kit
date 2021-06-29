@@ -1,0 +1,7 @@
+This has VDP debug register emulation, well one of the 16 debug registers anyway
+
+I fixed sound in TO2, was mirroring like crazy in the APU space, also fixed sprites not rendering all the way in the rain scene.
+
+So what you'll see I'm doing is setting an irq.(vh)blank.pending=1 flag, and then whenever you have hvirq enabled AND a pending flag, it sends an IRQ to the CPU and clears the pending flag, and when the CPU triggers it, the CPU marks it as acknowledged.
+
+Apparently BlastEm links bit 7 of the control status register to the vblank.pending flag, so I'm copying that.

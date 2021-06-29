@@ -1,0 +1,3 @@
+M68HC05: initial core implementation added
+M68000: renamed core from M68K
+Super Famicom: clearing $4200.d0 stops active joypad polling for the rest of the frame [Jonas Quinn]

@@ -1,0 +1,50 @@
+I'm releasing ares v119 today, which includes very preliminary Sega 32X
+emulation support. Compatibility is currently at around 50% with the dynamic
+recompiler, probably closer to 75% with the cached interpreter, and since the
+system requirements were a bit too steep (on account of my Mega Drive core being
+cycle/dot-accurate), I downclocked the SH2s a bit until I can speed up the
+emulator more. You'll currently need about a Ryzen 5 2600 to hit 60fps reliably.
+With the underclock, my Ryzen 7 5800X hits 120fps, and without it, 85fps.
+
+Although the compatibility for the new 32X core is a bit low, this is mostly due
+to pesky CPU bugs. The accuracy is quite high and I've emulated as much of the
+32X and SH7604 peripheral functions as possible. I pass all 161 tests from the
+Mars Check Program. It should not take much more work to reach 98% compatibility
+in the future. Sega CD 32X emulation support is present, but is likely not
+functional, as I haven't tested it yet.
+
+Other major features in this release include Sega SVP support for Virtua Racing,
+plus improved Nintendo 64, Mega Drive, and Mega CD emulation compatibility.
+
+I'm going to start working on Sega Saturn emulation now, while Luke Usher works
+on Neo Geo emulation. No promises as to when or if these cores will become
+playable, I'm just giving you all a heads up since you'll see the skeletons for
+these systems in the source code now.
+
+Changelog:
+
+  - Nintendo 64: improved Expansion Pak detection
+  - Nintendo 64: fixed swapped L and R buttons [simer]
+  - Nintendo 64: emulated the RST bit for gamepads
+  - ruby: added library detection support for the Linux and BSD targets
+  - lucia: gained support for game paks (custom file dialog only)
+  - Super Famicom: added support for Super Game Boy, Sufami Turbo, and BS Memory packs
+  - hiro: made SourceEdit optional for gtk2 and gtk3 targets (disabled for ares)
+  - Nintendo 64: emulated 2048-byte EEPROM identifier and transfer protocol
+  - Super Famicom: corrected ppu-performance widths table indexing to consider overscan
+  - Mega CD: fixed a bug in register $ff8003; allows Popful Mail to boot [TascoDLX]
+  - Mega Drive: fixed a bug with 256-width video modes
+  - Mega Drive: improved VDP DMA emulation which should fix many games
+  - Mega Drive: added SVP emulation
+  - Mega Drive: added 32X emulation
+  - Mega CD: fixed a bit-masking bug in register $ff8004; fixes Radical Rex [TascoDLX]
+  - Nintendo 64: fixed C implementation of RSP VMACU instruction
+  - Nintendo 64: use correct NTSC and PAL PIF ROM images based on the region
+  - Mega Drive: fixed reset logic, Z80 interrupt timing + prefix timing + bus control [TascoDLX]
+  - Mega CD: fixed word RAM access and CDC DMA word RAM transfers [TascoDLX]
+  - Nintendo 64: improved RSP VMOV emulation [Rasky]
+  - Nintendo 64: fixed RSP DMEM DMA alignment (&~7, not &~3) [Rasky]
+  - Nintendo 64: upgraded to the latest version of ParaLLEl-RDP
+  - nall: greatly expanded recompiler/amd64's supported intrinsics
+  - mia: substantial refactoring around a new virtual filesystem implementation from nall
+
