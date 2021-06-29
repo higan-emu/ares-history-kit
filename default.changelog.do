@@ -5,8 +5,10 @@ bare_version=${version#ares_}
 
 major_version=${bare_version%r*}
 source="changes/changes_$major_version.html"
-redo-ifchange "$source" ./extract-changelog.py
 
-echo "Update to ares ${bare_version} release."
-echo
-./extract-changelog.py "$bare_version" "$source"
+if [ -f "$source" ]; then
+    redo-ifchange "$source" ./extract-changelog.py
+    ./extract-changelog.py "$bare_version" "$source"
+else
+    echo "[No official changelog available for this version. -Ed.]"
+fi

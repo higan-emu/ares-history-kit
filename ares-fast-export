@@ -24,13 +24,17 @@ def iter_releases():
     with open("releases.txt", "r") as handle:
         for line in handle:
             date, version = line.strip().split("\t")
+            pretty_version = version.replace("_", " ")
 
             date = datetime.datetime.fromisoformat(date)
             archive_path = f"./archives/{version}.tar.xz"
             changelog_path = f"./changes/{version}.changelog"
 
             with open(changelog_path, "rb") as changelog_handle:
-                changelog = changelog_handle.read().strip()
+                changelog = (
+                    b"Update to %s release.\n\n" % pretty_version.encode("utf-8")
+                    + changelog_handle.read().rstrip()
+                )
 
             yield Release(date, version, changelog, archive_path)
 

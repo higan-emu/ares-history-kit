@@ -3,4 +3,3 @@ archive-list.txt
 releases.txt
 *.metadata
 *.changelog
-!changes/ares_v115.changelog
