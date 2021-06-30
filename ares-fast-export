@@ -95,6 +95,15 @@ def iter_files(archive):
                 if not path:
                     continue
 
+                # WIP tarballs included a script to download
+                # the ParaLLEl-RDP source from GitHub,
+                # but releases included the source itself,
+                # including the `.git` metadata.
+                # For consistency, let's not include any of that;
+                # we can subtree the repo in later.
+                if "/parallel-rdp/" in path:
+                    continue
+
                 if info.is_dir():
                     # This directory may be empty.
                     # Zip files store directories with a trailing slash.
