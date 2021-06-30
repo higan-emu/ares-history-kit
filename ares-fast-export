@@ -110,9 +110,10 @@ def produce_history(releases):
         )
         write(b"commit refs/heads/ares\n")
         write(b"mark :%d\n" % mark)
-        write(b"committer byuu <byuu@byuu.org> %d +0000\n" %
-            release.date.timestamp()
-        )
+        write(b"committer %s %d +0000\n" % (
+                b"Near <77224854+near-san@users.noreply.github.com>",
+                release.date.timestamp(),
+        ))
 
         write(b"data %d\n" % len(release.changelog))
         write(release.changelog)
