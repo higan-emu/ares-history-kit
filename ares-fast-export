@@ -67,14 +67,14 @@ def iter_files(archive):
                 if not path:
                     continue
 
+                # This path's's parent clearly isn't an empty directory.
+                empty_dirs.discard(os.path.dirname(path))
+
                 if info.isdir():
                     # This directory may be empty.
                     empty_dirs.add(path)
 
                 elif info.isfile():
-                    # This file's parent clearly isn't an empty directory.
-                    empty_dirs.discard(os.path.dirname(path))
-
                     yield ArchiveFile(
                         path=path,
                         size=info.size,
@@ -91,7 +91,9 @@ def iter_files(archive):
                 # instead of the root of the archive.
                 # Therefore, for zip files, we trim off
                 # the first path component.
-                path = info.filename.split("/", 1)[1]
+                # Also, Zip files store directories with a trailing slash,
+                # so let's git rid of that too.
+                path = info.filename.split("/", 1)[1].rstrip("/")
                 if not path:
                     continue
 
@@ -101,18 +103,17 @@ def iter_files(archive):
                 # including the `.git` metadata.
                 # For consistency, let's not include any of that;
                 # we can subtree the repo in later.
-                if "/parallel-rdp/" in path:
+                if "parallel-rdp" in path:
                     continue
+
+                # This path's parent clearly isn't an empty directory.
+                empty_dirs.discard(os.path.dirname(path))
 
                 if info.is_dir():
                     # This directory may be empty.
-                    # Zip files store directories with a trailing slash.
-                    empty_dirs.add(path.rstrip("/"))
+                    empty_dirs.add(path)
 
                 else:
-                    # This file's parent clearly isn't an empty directory.
-                    empty_dirs.discard(os.path.dirname(path))
-
                     yield ArchiveFile(
                         path=path,
                         size=info.file_size,
