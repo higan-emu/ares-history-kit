@@ -1,5 +1,9 @@
 Knuckles Chaotix is now fully playable at glorious 20fps, heh.
 
-Still a whole ton of issues but I really went to town with this WIP. I implemented read/write functionality for all the SH7804 internal registers/functional units, and added basic simulation of the free-range timer, DMA controller (very basic) and interrupt controller.
+Still a whole ton of issues but I really went to town with this WIP. I
+implemented read/write functionality for all the SH7804 internal
+registers/functional units, and added basic simulation of the free-range timer,
+DMA controller (very basic) and interrupt controller.
 
-On the 32X side, it should be functionally complete save for bugs now. VDP and PWM are fully implemented.
+On the 32X side, it should be functionally complete save for bugs now. VDP and
+PWM are fully implemented.

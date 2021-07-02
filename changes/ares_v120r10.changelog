@@ -1,7 +1,10 @@
-Master System: emulated sprite zoom and fifth-sprite status flag
-Master System: corrected VDP background emulation for mode 4 [fixes Codemasters games]
-Master System: latch VDP background nametable address and scroll registers [fixes Desert Speedtrap]
-Master System: mask CRAM reads to 6-bit in Master System mode [fixes Mercs]
-Master System: refactored VDP code
-Z80: swapped IND/INI to post-decrement B, and OUTD/OUTI to pre-decrement B
-lucia: fixed a crash when loading Game Gear games due to stubbing out the BIOS
+  - Master System: emulated sprite zoom and fifth-sprite status flag
+  - Master System: corrected VDP background emulation for mode 4 [fixes
+    Codemasters games]
+  - Master System: latch VDP background nametable address and scroll registers
+    [fixes Desert Speedtrap]
+  - Master System: mask CRAM reads to 6-bit in Master System mode [fixes Mercs]
+  - Master System: refactored VDP code
+  - Z80: swapped IND/INI to post-decrement B, and OUTD/OUTI to pre-decrement B
+  - lucia: fixed a crash when loading Game Gear games due to stubbing out
+    the BIOS

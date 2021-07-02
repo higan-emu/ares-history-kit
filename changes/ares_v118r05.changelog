@@ -1,1 +1,3 @@
-Here's the current build with working SVP support. Build with profile=accuracy if you try it because my fast scanline renderer breaks soooo many games including Virtua Racing ._.
+Here's the current build with working SVP support. Build with profile=accuracy
+if you try it because my fast scanline renderer breaks soooo many games
+including Virtua Racing ._.

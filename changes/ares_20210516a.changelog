@@ -1,1 +1,4 @@
-This one is an experiment to ignore A15 on memory pak reads+writes. If possible, I'd like to know if any games with controller pak issues start working with this change that didn't before ^-^;
+This one is an experiment to ignore A15 on memory pak reads+writes. If possible,
+I'd like to know if any games with controller pak issues start working with this
+change that didn't before ^-^;
+

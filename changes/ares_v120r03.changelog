@@ -1,5 +1,5 @@
-Nintendo 64: improved SI scanning of PIF RAM and emulated more flags
-Nintendo 64: added very accurate controller pak initialization code
-Nintendo 64: improved controller analog stick approximations [MerryMage]
-Nintendo 64: added priority queue to delay SI and PI DMA transfers
-Master System: added bit-perfect YM2413 instrument patch sets
+  - Nintendo 64: improved SI scanning of PIF RAM and emulated more flags
+  - Nintendo 64: added very accurate controller pak initialization code
+  - Nintendo 64: improved controller analog stick approximations [MerryMage]
+  - Nintendo 64: added priority queue to delay SI and PI DMA transfers
+  - Master System: added bit-perfect YM2413 instrument patch sets

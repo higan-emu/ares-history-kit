@@ -1,1 +1,3 @@
-SH-2 core finished, started connecting the 32X to it. It executes some instructions and does some I/O register stuff before hanging. Still gotta implement the 32X interrupts, PWM, and VDP stuff.
+SH-2 core finished, started connecting the 32X to it. It executes some
+instructions and does some I/O register stuff before hanging. Still gotta
+implement the 32X interrupts, PWM, and VDP stuff.

@@ -1,16 +1,30 @@
-Game Gear: set CPU::in() unmapped return value to MDR; fixes RoboCop 3 [Jonas Quinn]
-WonderSwan Color: do not mask screen tilemap base address; fixes Sorobang [FPGAzumSpass]
-Mega Drive: set supervisor mode and clear trace mode for all exceptions; fixes Gouketsuji Ichizoku [Jonas Quinn]
-Mega CD: format BRAM instead of leaving it uninitialized; fixes Popful Mail (US)
-WonderSwan: add patch for Meitantei Conan: Nishi no Meitantei Saidai no Kiki!
-Game Boy: add MBC1#M mapper database entries; fixes Bomber Man Collection, Genjin Collection, Momotarou Collection, and Mortal Kombat I & II
-Neo Geo Pocket: $8118 background register exists even in the K1GE GPU; fixes Samurai Shodown
-Neo Geo Pocket Color: return 0xFF acknowledge byte after flash erase command; fixes Puzzle Link 2 and Memories off: Pure
-Neo Geo Pocket: clear watchdog timer counter on trigger to prevent infinite triggering; fixes Neo Baccarat, Neo Cherry Master Color, and Neo Mystery Bonus
-TLCS900H: do not allow interrupts to run between CPDR, LDIR, LDDR instructions; fixes Fantastic Night Dreams Cotton
-Neo Geo Pocket: add all remaining missing I/O registers (not emulated, but registers are readable and writable now)
-Neo Geo Pocket Color: above changes also fixed in-game audio in Crush Roller and Dynamite Slugger
-Mega CD: added 1M mode WRAM swap request flag; fxies AX-101, Earnest Evans, and Might & Magic III [TascoDLX]
-Nintendo 64: added ISViewer support
-lucia: added input mapping overlays for all remaining systems
-lucia: added two-player support to all remaining systems
+  - Game Gear: set CPU::in() unmapped return value to MDR; fixes RoboCop 3
+    [Jonas Quinn]
+  - WonderSwan Color: do not mask screen tilemap base address; fixes Sorobang
+    [FPGAzumSpass]
+  - Mega Drive: set supervisor mode and clear trace mode for all exceptions;
+    fixes Gouketsuji Ichizoku [Jonas Quinn]
+  - Mega CD: format BRAM instead of leaving it uninitialized; fixes Popful Mail
+    (US)
+  - WonderSwan: add patch for Meitantei Conan: Nishi no Meitantei Saidai
+    no Kiki!
+  - Game Boy: add MBC1#M mapper database entries; fixes Bomber Man Collection,
+    Genjin Collection, Momotarou Collection, and Mortal Kombat I & II
+  - Neo Geo Pocket: $8118 background register exists even in the K1GE GPU;
+    fixes Samurai Shodown
+  - Neo Geo Pocket Color: return 0xFF acknowledge byte after flash erase
+    command; fixes Puzzle Link 2 and Memories off: Pure
+  - Neo Geo Pocket: clear watchdog timer counter on trigger to prevent
+    infinite triggering; fixes Neo Baccarat, Neo Cherry Master Color, and
+    Neo Mystery Bonus
+  - TLCS900H: do not allow interrupts to run between CPDR, LDIR, LDDR
+    instructions; fixes Fantastic Night Dreams Cotton
+  - Neo Geo Pocket: add all remaining missing I/O registers (not emulated,
+    but registers are readable and writable now)
+  - Neo Geo Pocket Color: above changes also fixed in-game audio in Crush
+    Roller and Dynamite Slugger
+  - Mega CD: added 1M mode WRAM swap request flag; fxies AX-101, Earnest Evans,
+    and Might & Magic III [TascoDLX]
+  - Nintendo 64: added ISViewer support
+  - lucia: added input mapping overlays for all remaining systems
+  - lucia: added two-player support to all remaining systems

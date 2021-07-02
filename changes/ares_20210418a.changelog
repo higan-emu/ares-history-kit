@@ -1,9 +1,18 @@
 This has VDP debug register emulation, well one of the 16 debug registers anyway
-I fixed sound in TO2, was mirroring like crazy in the APU space, also fixed sprites not rendering all the way in the rain scene.
-So what you'll see I'm doing is setting an irq.(vh)blank.pending=1 flag, and then whenever you have hvirq enabled AND a pending flag, it sends an IRQ to the CPU and clears the pending flag, and when the CPU triggers it, the CPU marks it as acknowledged.
-Apparently BlastEm links bit 7 of the control status register to the vblank.pending flag, so I'm copying that.
 
-[Near then posted a screenshot of Titan Overdrive 2 running inside ares. In white text on a blue background, it says:
+I fixed sound in TO2, was mirroring like crazy in the APU space, also fixed
+sprites not rendering all the way in the rain scene.
+
+So what you'll see I'm doing is setting an irq.(vh)blank.pending=1 flag, and
+then whenever you have hvirq enabled AND a pending flag, it sends an IRQ to the
+CPU and clears the pending flag, and when the CPU triggers it, the CPU marks it
+as acknowledged.
+
+Apparently BlastEm links bit 7 of the control status register to the
+vblank.pending flag, so I'm copying that.
+
+[Near then posted a screenshot of Titan Overdrive 2 running inside ares. In
+white text on a blue background, it says:
 
     0D2 B50D
 
@@ -27,4 +36,6 @@ Apparently BlastEm links bit 7 of the control status register to the vblank.pend
 -Ed.]
 
 Crashes here if I don't lower the CPU H/VIRQ lines on Vblank/Hblank=0
-Also I am faking the Vcounter incrementing early when reading the Vcounter, easier that way.
+
+Also I am faking the Vcounter incrementing early when reading the Vcounter,
+easier that way.

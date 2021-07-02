@@ -1,2 +1,4 @@
-WonderSwan: disabling an interrupt source does clear its pending status (fixes Digimon Tamers)
-TLCS900H: improved prefetch handling and instruction timing (still imperfect)
+  - WonderSwan: disabling an interrupt source does clear its pending status
+    (fixes Digimon Tamers)
+  - TLCS900H: improved prefetch handling and instruction timing (still
+    imperfect)

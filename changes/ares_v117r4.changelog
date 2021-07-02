@@ -1,2 +1,5 @@
 Includes PS1 fixes, N64 save+rumble+upscaling+supersampling support.
-Note there's a small bug with HD and UHD settings when the window size is too small, it shrinks down really small. Just resize the window larger again and it'll work.
+
+Note there's a small bug with HD and UHD settings when the window size is too
+small, it shrinks down really small. Just resize the window larger again and
+it'll work.

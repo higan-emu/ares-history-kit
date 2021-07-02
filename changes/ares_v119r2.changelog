@@ -6,17 +6,22 @@ It also fixes some game bugs while I'm at it, and boosts 32X compatibility from
 
 Please do upgrade if you have v119, this one's important.
 
-  - SH2: MAC must increment R[n] before reading from R[m]; fixes Virtua Fighter and Toughman Contest
+  - SH2: MAC must increment R[n] before reading from R[m]; fixes Virtua
+    Fighter and Toughman Contest
   - SH2: fixed dynarec MOV @Rm+,Rn to not increment when Rm==Rn
   - SH2: fixed dynarec TST instruction
   - SH2: improved dynarec accuracy by breaking blocks on delay slot branches
   - SH2: improved dynarec accuracy by decreasing the underclocking amount
   - Mega Drive: implemented undocumented VSRAM and CRAM DMA fill
-  - Mega Drive: simplified scanline VDP renderer; fixes TMNT: Tournament Fighters graphics
-  - Mega Drive: improved region detection; correctly identifies Alien Soldier region now
+  - Mega Drive: simplified scanline VDP renderer; fixes TMNT: Tournament
+    Fighters graphics
+  - Mega Drive: improved region detection; correctly identifies Alien Soldier
+    region now
   - Mega CD: fixed crash on game load
   - Super Famicom: fixed direct color mode; fixes Secret of Mana world map
-  - WonderSwan Color: fixed initial state for new EEPROMs plus EEPROM size; fixes missing sound
+  - WonderSwan Color: fixed initial state for new EEPROMs plus EEPROM size;
+    fixes missing sound
   - lucia: fixed saving RAM files when a manual save path was specified
-  - ruby: fixed library dependency detection for Arch Linux and other distributions
+  - ruby: fixed library dependency detection for Arch Linux and other
+    distributions
   - hiro/GTK3: added CSS stylesheet overrides to improve appearance [Screwtape]

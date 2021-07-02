@@ -1,2 +1,2 @@
-Nintendo 64: reverted 64-bit TLB (not actually present)
-Neo Geo: initial implementation
+  - Nintendo 64: reverted 64-bit TLB (not actually present)
+  - Neo Geo: initial implementation

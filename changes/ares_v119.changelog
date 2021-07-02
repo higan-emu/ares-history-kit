@@ -28,23 +28,29 @@ Changelog:
   - Nintendo 64: emulated the RST bit for gamepads
   - ruby: added library detection support for the Linux and BSD targets
   - lucia: gained support for game paks (custom file dialog only)
-  - Super Famicom: added support for Super Game Boy, Sufami Turbo, and BS Memory packs
-  - hiro: made SourceEdit optional for gtk2 and gtk3 targets (disabled for ares)
+  - Super Famicom: added support for Super Game Boy, Sufami Turbo, and BS
+    Memory packs
+  - hiro: made SourceEdit optional for gtk2 and gtk3 targets (disabled
+    for ares)
   - Nintendo 64: emulated 2048-byte EEPROM identifier and transfer protocol
-  - Super Famicom: corrected ppu-performance widths table indexing to consider overscan
-  - Mega CD: fixed a bug in register $ff8003; allows Popful Mail to boot [TascoDLX]
+  - Super Famicom: corrected ppu-performance widths table indexing to consider
+    overscan
+  - Mega CD: fixed a bug in register $ff8003; allows Popful Mail to boot
+    [TascoDLX]
   - Mega Drive: fixed a bug with 256-width video modes
   - Mega Drive: improved VDP DMA emulation which should fix many games
   - Mega Drive: added SVP emulation
   - Mega Drive: added 32X emulation
-  - Mega CD: fixed a bit-masking bug in register $ff8004; fixes Radical Rex [TascoDLX]
+  - Mega CD: fixed a bit-masking bug in register $ff8004; fixes Radical Rex
+    [TascoDLX]
   - Nintendo 64: fixed C implementation of RSP VMACU instruction
   - Nintendo 64: use correct NTSC and PAL PIF ROM images based on the region
-  - Mega Drive: fixed reset logic, Z80 interrupt timing + prefix timing + bus control [TascoDLX]
+  - Mega Drive: fixed reset logic, Z80 interrupt timing + prefix timing +
+    bus control [TascoDLX]
   - Mega CD: fixed word RAM access and CDC DMA word RAM transfers [TascoDLX]
   - Nintendo 64: improved RSP VMOV emulation [Rasky]
   - Nintendo 64: fixed RSP DMEM DMA alignment (&~7, not &~3) [Rasky]
   - Nintendo 64: upgraded to the latest version of ParaLLEl-RDP
   - nall: greatly expanded recompiler/amd64's supported intrinsics
-  - mia: substantial refactoring around a new virtual filesystem implementation from nall
-
+  - mia: substantial refactoring around a new virtual filesystem implementation
+    from nall

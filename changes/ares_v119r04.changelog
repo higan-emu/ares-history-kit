@@ -1,5 +1,6 @@
-N64: fixed RSP vector unit register values in the disassembler
-Mega Drive: implemented proper VDP FIFO timings for both reads and writes (hopefully)
-Mega Drive: enabled external and RAM refresh timing
-Mega Drive: added (Mega Drive | Mega 32X) + Mega CD mode 1 emulation
-Mega Drive: refactored dot-based VDP renderer
+  - N64: fixed RSP vector unit register values in the disassembler
+  - Mega Drive: implemented proper VDP FIFO timings for both reads and writes
+    (hopefully)
+  - Mega Drive: enabled external and RAM refresh timing
+  - Mega Drive: added (Mega Drive | Mega 32X) + Mega CD mode 1 emulation
+  - Mega Drive: refactored dot-based VDP renderer

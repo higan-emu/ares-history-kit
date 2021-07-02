@@ -1,1 +1,4 @@
-My tracer was crashing in v118 for the Mega CD due to the trace address not being masked and the value underflowing, so here's a pre-v118.4 WIP with that fixed.
+My tracer was crashing in v118 for the Mega CD due to the trace address not
+being masked and the value underflowing, so here's a pre-v118.4 WIP with that
+fixed.
+
