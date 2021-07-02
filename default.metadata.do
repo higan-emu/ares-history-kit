@@ -2,7 +2,7 @@ archive="$2"
 
 redo-ifchange "$archive"
 
-version=$(printf "%s" "$archive" | grep -Eo 'ares_[vr0-9ab]+')
+version=$(printf "%s" "$archive" | grep -Eo 'ares_[vr0-9a]+')
 
 case "$archive" in
     *.tar.xz)

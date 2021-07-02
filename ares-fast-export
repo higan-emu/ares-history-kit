@@ -51,11 +51,11 @@ def iter_files(archive):
     if archive.endswith(".tar.xz"):
         with tarfile.open(archive) as handle:
             for info in iter(handle.next, None):
-                # For some reason, the ares_20210516b.tar.xz archive
+                # For some reason, the ares_20210516a.tar.xz archive
                 # includes an "ares/" prefix on every path.
                 # To make it match the contents of other archives,
                 # we'll strip the first path segment off every file.
-                if archive.endswith("ares_20210516b.tar.xz"):
+                if archive.endswith("ares_20210516a.tar.xz"):
                     if "/" not in info.name:
                         # This is not in a subdirectory, we don't care
                         continue
