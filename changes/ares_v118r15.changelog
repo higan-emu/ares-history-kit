@@ -1,0 +1,4 @@
+[This release was posted to the ares Discord after r16. That version introduced
+128KB VRAM mode for the Super Famicom core, and somebody requested the previous
+version so they could see the changes involved in implementing that feature.
+-Ed.]
